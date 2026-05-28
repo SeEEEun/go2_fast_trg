@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 
 from ament_index_python.packages import get_package_share_directory
@@ -43,11 +44,11 @@ def generate_launch_description():
             DeclareLaunchArgument("launch_rl", default_value="true"),
             DeclareLaunchArgument(
                 "rl_model_path",
-                default_value="/home/jeonbotdae/go2_sim_ws/src/go2_rl_deploy/models/actor_jit.pt",
+                default_value=os.path.expanduser("~/go2_sim_ws/src/go2_rl_deploy/models/actor_jit.pt"),
             ),
             DeclareLaunchArgument(
                 "fastlio_launch",
-                default_value="/home/jeonbotdae/fastlio_ws/src/FAST_LIO_ROS2/launch/mapping.launch.py",
+                default_value=os.path.expanduser("~/fastlio_ws/src/FAST_LIO_ROS2/launch/mapping.launch.py"),
             ),
             DeclareLaunchArgument("fastlio_config_file", default_value="fastlio_roughnav.yaml"),
             DeclareLaunchArgument("trg_config", default_value=str(share / "config" / "trg_ros2_params_roughnav.yaml")),

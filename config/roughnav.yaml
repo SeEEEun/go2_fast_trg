@@ -1,6 +1,6 @@
 mujoco_go2_bridge:
   ros__parameters:
-    model_path: /home/jeonbotdae/go2_roughnav_ws/mujoco/icra2023_go2_rough_course.xml
+    model_path: mujoco/icra2023_go2_rough_course.xml
     base_body: base_link
     lidar_frame: lidar_link
     imu_frame: imu_link

@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 
 from ament_index_python.packages import get_package_share_directory
@@ -41,7 +42,7 @@ def generate_launch_description():
             DeclareLaunchArgument("launch_rviz", default_value="true"),
             DeclareLaunchArgument(
                 "fastlio_launch",
-                default_value="/home/jeonbotdae/fastlio_ws/src/FAST_LIO_ROS2/launch/mapping.launch.py",
+                default_value=os.path.expanduser("~/fastlio_ws/src/FAST_LIO_ROS2/launch/mapping.launch.py"),
             ),
             DeclareLaunchArgument("trg_config", default_value=str(share / "config" / "trg_ros2_params_isaac.yaml")),
             DeclareLaunchArgument("trg_map", default_value="mountain"),
@@ -49,7 +50,7 @@ def generate_launch_description():
             DeclareLaunchArgument("rviz_config", default_value=str(share / "rviz" / "isaac_debug.rviz")),
             DeclareLaunchArgument("launch_robot_model", default_value="false"),
             DeclareLaunchArgument("launch_bag", default_value="false"),
-            DeclareLaunchArgument("bag_path", default_value="/home/jeonbotdae/fastlio_ws/slam_map3/"),
+            DeclareLaunchArgument("bag_path", default_value=os.path.expanduser("~/fastlio_ws/slam_map3/")),
             Node(
                 package="go2_roughnav",
                 executable="isaac_udp_ros2_bridge",

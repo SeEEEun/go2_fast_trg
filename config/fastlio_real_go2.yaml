@@ -7,7 +7,7 @@
         filter_size_map: 0.2
         cube_side_length: 1000.0
         runtime_pos_log_enable: false
-        map_file_path: "/home/jeonbotdae/go2_roughnav_ws/slam_maps/real_go2_fastlio.pcd"
+        map_file_path: "slam_maps/real_go2_fastlio.pcd"
 
         common:
             lid_topic: "/lidar/points"

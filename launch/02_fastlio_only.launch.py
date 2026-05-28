@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 
 from ament_index_python.packages import get_package_share_directory
@@ -14,7 +15,7 @@ def generate_launch_description():
         [
             DeclareLaunchArgument(
                 "fastlio_launch",
-                default_value="/home/jeonbotdae/fastlio_ws/src/FAST_LIO_ROS2/launch/mapping.launch.py",
+                default_value=os.path.expanduser("~/fastlio_ws/src/FAST_LIO_ROS2/launch/mapping.launch.py"),
             ),
             IncludeLaunchDescription(
                 PythonLaunchDescriptionSource(fastlio_launch),
